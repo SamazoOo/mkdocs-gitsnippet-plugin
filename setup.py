@@ -14,7 +14,7 @@ setup(
     keywords='mkdocs python markdown snippet git',
     url='https://github.com/SamazoOo/mkdocs-gitsnippet-plugin',
     author='Samuel Comino',
-    author_email='samuel@mail.com',
+    author_email='Samuel.covi@gmail.com',
     license='MIT',
     python_requires='>=2.7.9,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     install_requires=['mkdocs>=0.17', 'gitpython'],
