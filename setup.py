@@ -8,7 +8,7 @@ def read(fname):
 
 setup(
     name='mkdocs-gitsnippet-plugin',
-    version='1.0.0',
+    version='1.0.1',
     description='Mkdocs plugin that allow to inject snippet or all markdown content from a given remote git repository.',
     long_description=read('README.md'),
     keywords='mkdocs python markdown snippet git',
