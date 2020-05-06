@@ -19,6 +19,7 @@ Enable the plugin in your `mkdocs.yml` if **you didn't change the folder name th
 plugins:
 - gitsnippet
 ```
+
 Enable the plugin in your `mkdocs.yml` if **you changed the folder name that contain your documentation source files**. By default `docs`.
 
 ```yaml
