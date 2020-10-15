@@ -1,7 +1,7 @@
 from mkdocs.plugins import BasePlugin
 
 from jinja2 import Template
-from git import Repo
+from git import Repo,
 import uuid
 import shutil
 import re
@@ -49,12 +49,15 @@ class GitSnippetPlugin(BasePlugin):
 
         return markdown
 
-    def markdown_gitsnippet(self, git_url, file_path, section_name):
+    def markdown_gitsnippet(self, git_url, file_path, section_name, branch):
         p = re.compile("^#+ ")
         m = p.search(section_name)
         id = uuid.uuid4().hex
         root = "/tmp/" + id
-        Repo.clone_from(git_url, root)
+        r = Repo.clone_from(git_url, root)
+
+        if branch is not None:
+            r.checkout(branch)
 
         content = ""
         with open(root + '/' + file_path, 'r') as myfile:
@@ -82,9 +85,9 @@ class GitSnippetPlugin(BasePlugin):
         shutil.rmtree(root)
         return content
 
-    def gitsnippet(self, git_url, file_path, section_name):
+    def gitsnippet(self, git_url, file_path, section_name, branch):
         if file_path.endswith('.md'):
-            return self.markdown_gitsnippet(git_url, file_path, section_name)
+            return self.markdown_gitsnippet(git_url, file_path, section_name, branch)
         else:
             return "File format not supported"
 
