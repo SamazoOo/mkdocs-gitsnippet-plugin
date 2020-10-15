@@ -57,7 +57,7 @@ class GitSnippetPlugin(BasePlugin):
         r = Repo.clone_from(git_url, root)
 
         if branch is not None:
-            r.checkout(branch)
+            r.git.checkout(branch)
 
         content = ""
         with open(root + '/' + file_path, 'r') as myfile:
