@@ -1,7 +1,7 @@
 from mkdocs.plugins import BasePlugin
 
 from jinja2 import Template
-from git import Repo,
+from git import Repo
 import uuid
 import shutil
 import re
