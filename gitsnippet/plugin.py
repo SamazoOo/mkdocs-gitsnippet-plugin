@@ -49,7 +49,7 @@ class GitSnippetPlugin(BasePlugin):
 
         return markdown
 
-    def markdown_gitsnippet(self, git_url, file_path, section_name, branch):
+    def markdown_gitsnippet(self, git_url, file_path, section_name, branch=None):
         p = re.compile("^#+ ")
         m = p.search(section_name)
         id = uuid.uuid4().hex
