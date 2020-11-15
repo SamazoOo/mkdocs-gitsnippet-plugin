@@ -32,7 +32,7 @@ base_path: docs
 
 ## Usage
 
-mkdocs-gitsnippet-plugin will download the file you specify from a remote git repository, extract the section or all content and inject that into you MkDocs file at render time.
+mkdocs-gitsnippet-plugin will download the file you specify from a remote git repository, extract the section or all content and inject that into you MkDocs file at render time. It's possible to specify brunch of repository
 
 ### Snippet a section
 
@@ -41,12 +41,21 @@ If you want to extract a section from a remote git repository, you can add the f
 ```markdown
 {{ gitsnippet('git@github.com:SamazoOo/mkdocs-gitsnippet-plugin.git', 'README.md', '## Installation') }}
 ```
+
 ### All markdown content
 
 If you want to get all context from a markdown in a remote git repository, you can add the following to your markdown in MkDocs:
 
 ```markdown
 {{ gitsnippet('git@github.com:SamazoOo/mkdocs-gitsnippet-plugin.git', 'README.md', '') }}
+```
+
+### All markdown content and specify the name of the branch
+
+If you want to get all context from a markdown in a remote git repository and get it from development brunch, you can add the following to your markdown in MkDocs:
+
+```markdown
+{{ gitsnippet('git@github.com:SamazoOo/mkdocs-gitsnippet-plugin.git', 'README.md', '', 'development') }}
 ```
 
 ### Images references

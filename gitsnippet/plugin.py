@@ -85,7 +85,7 @@ class GitSnippetPlugin(BasePlugin):
         shutil.rmtree(root)
         return content
 
-    def gitsnippet(self, git_url, file_path, section_name, branch):
+    def gitsnippet(self, git_url, file_path, section_name, branch=None):
         if file_path.endswith('.md'):
             return self.markdown_gitsnippet(git_url, file_path, section_name, branch)
         else:
